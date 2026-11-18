@@ -2,231 +2,75 @@
 
 ## Project Overview
 
-This project analyzes retail customer data to explore purchasing patterns, customer demographics, product spending, and marketing campaign responses.
+This project analyzes customer demographics, purchasing patterns, and marketing campaign responses to support more targeted retail marketing decisions. Using **Python, MySQL, Excel, and Power BI**, it combines data cleaning, exploratory analysis, SQL reporting, and interactive visualizations. The current scope is **descriptive and exploratory**, not predictive modeling.
 
-The goal is to identify meaningful customer behavior patterns and communicate findings through data cleaning, exploratory data analysis, SQL queries, Excel visualizations, and an interactive Power BI dashboard.
+## Tools
 
-## Tools and Technologies
+- **Python:** Data cleaning, validation, and exploratory data analysis (EDA)
+- **MySQL:** Data storage, quality checks, and analytical queries
+- **Excel:** Descriptive statistics, PivotTables, and charts
+- **Power BI:** Interactive customer and spending dashboards
 
-- **Python:** Data cleaning and exploratory data analysis
-- **MySQL:** Data storage, validation, and analytical queries
-- **Microsoft Excel:** Statistical summaries, PivotTables, and charts
-- **Power BI:** Interactive dashboard and customer segmentation analysis
+## Dataset and Key Metrics
 
-## Dataset
+The marketing campaign dataset contains **2,240 customer records**. Removing 24 records with missing income values produced a cleaned dataset of **2,216 customers**.
 
-The original marketing campaign dataset contains 2,240 customer records.
-
-During cleaning, 24 records with missing income values were removed, resulting in a cleaned dataset containing 2,216 customers.
-
-### Key Dataset Metrics
-
-| Metric | Value |
-|---|---|
-| Original Records | 2,240 |
-| Cleaned Records | 2,216 |
-| Missing Income Values Removed | 24 |
-| Average Customer Income | $52,247.25 |
-| Customers Who Responded | 333 |
-| Campaign Response Rate | 15.03% |
-
-## Project Structure
-
-```text
-retail-customer-analytics/
-├── data/
-├── excel/
-├── sql/
-├── python/
-├── power bi/
-├── screenshots/
-└── README.md
-```
+| Metric | Result |
+|---|---:|
+| Cleaned customers | 2,216 |
+| Average customer income | $52,247.25 |
+| Positive campaign responses | 333 |
+| Campaign response rate | 15.03% |
 
 ## Data Cleaning and Validation
 
-The dataset was cleaned and validated using Python and MySQL to ensure accuracy and consistency.
+- Checked missing values, duplicate customer IDs, and data types; removed 24 records with missing income.
+- Created an `Age` feature from customer birth years.
+- Formatted `Dt_Customer` in Excel as **Day-Month-Year (`dd/mm/yyyy`)** for consistent date display.
+- Verified **2,216 unique customer IDs**, **no remaining missing values**, and **no duplicate IDs**; compared Python and MySQL validation results.
 
-### Data Cleaning Steps
+## Analysis Highlights
 
-- Inspected the dataset for missing values and duplicate customer IDs.
-- Identified 24 records with missing income values.
-- Removed those 24 records, reducing the dataset from 2,240 to 2,216 customers.
-- Created an `Age` feature using customers' birth years.
-- Verified that the cleaned dataset contains no missing values or duplicate customer IDs.
-- - **Date Formatting (`Dt_Customer`):** Standardized the display of customer enrollment dates in Excel using the Day-Month-Year (DMY) format (`dd/mm/yyyy`) to ensure consistent date presentation during analysis.
-
-### Data Quality Checks
-
-| Validation Check | Result |
-|---|---|
-| Total cleaned records | 2,216 |
-| Unique customer IDs | 2,216 |
-| Missing values | 0 |
-| Duplicate customer IDs | 0 |
-| Average income | $52,247.25 |
-| Positive campaign responses | 333 |
-
-Python and MySQL validation results were compared to confirm consistency across the analysis.
-
-## SQL Analysis
-
-MySQL was used to organize, validate, and analyze customer purchasing behavior.
-
-The SQL analysis includes:
-
-- Creating the `retail_data` database and `marketing_campaign` table.
-- Importing customer records and converting registration dates into SQL date format.
-- Analyzing customer demographics, including education, marital status, and age groups.
-- Examining customer income and purchasing patterns.
-- Comparing spending across six product categories.
-- Analyzing marketing campaign acceptance and customer responses.
-
-SQL validation confirmed **2,216 unique customers**, **zero missing values**, and **333 positive campaign responses**.
+- **Excel:** Summary statistics, enrollment trends by year, income boxplot, age histogram, and campaign response comparisons by education and marital status.
+- **SQL:** Customer demographics, average income, spending across six product categories, campaign acceptance and response counts, household composition, and website visits by age group.
+- **Python:** Distributions, outliers, demographic and income relationships with campaign response, and correlation analysis.
+- **Power BI:** Income distribution, education and marital status, normalized wine spending, product-category spending, and **Top 20 Customers by Total Spending**. Year and Education slicers support interactive exploration.
 
 ## Power BI Dashboard
 
-### Dashboard Preview
+### Main Dashboard
 
 ![Retail Customer Analytics Power BI Dashboard](screenshots/retail_customer_dashboard_final.png)
-
 
 ### Top 20 Customers by Total Spending
 
 ![Top 20 Customers by Total Spending](screenshots/top_20_customer_spending.png)
 
-An interactive Power BI dashboard was developed to visualize customer demographics, purchasing behavior, and marketing campaign performance.
+## Business Recommendations
 
-### Key Performance Indicators
+- **Target customer segments:** Use age, education, marital status, and income patterns to guide campaign targeting.
+- **Personalize promotions:** Use product-category spending to develop more relevant offers.
+- **Evaluate engagement:** Compare campaign acceptance and response patterns when planning future promotions.
+- **Support retention:** Explore loyalty initiatives for high-spending customers.
 
-- **Total Customers:** 2,216
-- **Average Customer Income:** $52.25K
-- **Campaign Response Rate:** 15.03%
+**Future improvements:** Train and evaluate a campaign-response classification model, and incorporate campaign costs and attributable revenue to calculate promotional ROI. Neither is implemented in the current project.
 
-### Dashboard Visualizations
+## Repository Contents
 
-- **Income Distribution:** Customer income grouped into 5,000-unit bins, with registration year as a comparison dimension.
-- **Customer Demographics:** Customer distribution by education and marital status.
-- **Normalized Wine Spending:** Customer-level wine spending divided by income, plotted against customer income.
-- **Product Category Spending:** Total spending across wine, meat, gold, fish, sweets, and fruit categories.
+| Folder | Contents |
+|---|---|
+| `data/` | Original and cleaned customer datasets |
+| `excel/` | Excel analysis workbook |
+| `sql/` | MySQL analysis script |
+| `python/` | Jupyter notebook for cleaning and EDA |
+| `power bi/` | Power BI dashboard (`.pbix`) |
+| `screenshots/` | Dashboard preview images |
 
-### Interactive Filters
+## How to Explore the Project
 
-The dashboard includes **Year** and **Education** slicers to explore purchasing behavior across customer segments.
+1. **Python:** Open the notebook in `python/`, install any required libraries (including pandas, NumPy, Matplotlib, and Seaborn), adjust the CSV path if necessary, and run the cells in order.
+2. **MySQL:** Open the script in `sql/` with MySQL Workbench. Use the **cleaned CSV** from `data/`, check `SHOW VARIABLES LIKE 'secure_file_priv';`, update the `LOAD DATA INFILE` path, and run the setup, import, and queries on a new database.
+3. **Excel:** Open the workbook in `excel/` to review statistics, PivotTables, and charts.
+4. **Power BI:** Open the `.pbix` file in `power bi/` using Power BI Desktop. If necessary, update the data source through **Transform data → Data source settings**.
 
-Both slicers were tested and confirmed to filter the product spending visualization.
-
-## Python Exploratory Data Analysis (EDA)
-
-Python was used to explore customer demographics, income distributions, spending behavior, and marketing campaign responses.
-
-### Analysis Performed
-
-- Inspected dataset structure, data types, and descriptive statistics.
-- Identified and handled missing income values.
-- Checked for duplicate customer IDs and remaining missing values.
-- Examined numerical distributions and potential outliers.
-- Explored relationships between customer characteristics and purchasing behavior.
-- Calculated campaign response counts and response rates.
-
-The cleaned dataset contains **2,216 customers**, with an overall campaign response rate of **15.03%**.
-
-The Jupyter notebook contains the Python code and supporting exploratory analysis.
-
-## Excel Analysis
-
-Microsoft Excel was used for descriptive statistics, customer segmentation, and visual exploration.
-
-### Analysis Performed
-
-- Calculated summary statistics for customer data.
-- Created an **Income boxplot** to examine the spread of customer incomes and potential outliers.
-- Created an **Age histogram** to explore the distribution of customer ages.
-- Analyzed customer registrations by year.
-- Compared campaign responses across education levels and marital status groups using PivotTables and charts.
-
-The Excel workbook provides an additional view of customer characteristics and campaign engagement.
-
-**Date Formatting:** Formatted the `Dt_Customer` column in Excel using the Day-Month-Year (DMY) date format (`dd/mm/yyyy`) to ensure customer enrolment dates are displayed consistently and correctly for analysis and visualization.
-
-## How to Explore and Run This Project
-
-### Prerequisites
-
-- Python 3 with Jupyter Notebook
-- Python libraries used in the notebook, such as pandas, NumPy, Matplotlib, and Seaborn
-- MySQL Server and MySQL Workbench
-- Microsoft Excel
-- Power BI Desktop
-
-### 1. Download the Repository
-
-Download or clone this repository to your computer.
-
-The `data/` folder contains the original and cleaned customer datasets.
-
-### 2. Run the Python Analysis
-
-Open the Jupyter notebook in the `python/` folder.
-
-Update the dataset file path if necessary, install any missing Python libraries, and run the notebook cells in order.
-
-The notebook contains the data cleaning, validation, and exploratory analysis.
-
-### 3. Run the SQL Analysis
-
-The SQL workflow uses the **cleaned customer dataset**, not the original raw dataset. Data cleaning is performed in Python first, removing 24 records with missing income values. The resulting 2,216-customer dataset is then imported into MySQL for validation and analytical queries.
-
-When reproducing the SQL analysis, use the cleaned CSV from the `data/` folder as the import source.
-
-Open the SQL script in the `sql/` folder using MySQL Workbench.
-
-The script creates the `retail_data` database and the `marketing_campaign` table.
-
-Before importing the CSV, check the MySQL permitted import directory:
-
-```sql
-SHOW VARIABLES LIKE 'secure_file_priv';
-```
-
-Update the CSV path in the `LOAD DATA INFILE` statement to match your local environment.
-
-Run the import once, then execute the data transformation, validation, and analytical queries.
-
-**Note:** The age calculation uses the current calendar year, so calculated ages may change when the script is run in a different year.
-
-### 4. Explore the Excel Workbook
-
-Open the workbook in the `excel/` folder to review descriptive statistics, PivotTables, and visualizations.
-
-### 5. Explore the Power BI Dashboard
-
-Open the `.pbix` file in the `power bi/` folder using Power BI Desktop.
-
-If Power BI cannot locate the dataset, update the data source path through **Transform data → Data source settings**.
-
-Use the Year and Education slicers to explore different customer segments.
-
-## Notes on Reproducibility
-
-- The original dataset contains 2,240 records.
-- The cleaned dataset contains 2,216 records after removing 24 records with missing income.
-- The SQL import requires a local file path compatible with the MySQL server configuration.
-- The Excel and Power BI files may require refreshing or updating their data source paths on another computer.
-- The SQL setup should be run against a new database when reproducing the complete workflow.
-
-## Business Recommendations and Future Improvements
-
-### Business Recommendations
-
-- **Customer Segmentation:** Use demographic characteristics such as age, education, marital status, and income to identify customer groups for more targeted marketing campaigns.
-- **Personalized Promotions:** Analyze spending across product categories to identify customer preferences and develop more relevant promotional offers.
-- **Campaign Effectiveness:** Use campaign acceptance and response data to compare customer engagement and identify opportunities to improve future marketing strategies.
-- **High-Value Customers:** Use total spending analysis to identify high-value customers and explore opportunities for retention and loyalty initiatives.
-
-### Future Improvements
-
-- **Predictive Modeling:** Train and evaluate a classification model to estimate the likelihood of customers responding to future marketing campaigns.
-- **Marketing ROI Analysis:** Incorporate campaign costs and attributable revenue to measure return on investment and evaluate promotional effectiveness.
-
-**Project Scope:** This project focuses on descriptive and exploratory analytics. Predictive modeling and ROI measurement are proposed future enhancements, not features implemented in the current project.
+**Reproducibility notes:** File paths may need updating on another computer. SQL-derived age values depend on the calendar year in which the script is run.
