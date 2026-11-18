@@ -38,7 +38,7 @@ retail-customer-analytics/
 ├── excel/
 ├── sql/
 ├── python/
-├── powerbi/
+├── power bi/
 ├── screenshots/
 └── README.md
 ```
@@ -189,7 +189,7 @@ Open the workbook in the `excel/` folder to review descriptive statistics, Pivot
 
 ### 5. Explore the Power BI Dashboard
 
-Open the `.pbix` file in the `powerbi/` folder using Power BI Desktop.
+Open the `.pbix` file in the `power bi/` folder using Power BI Desktop.
 
 If Power BI cannot locate the dataset, update the data source path through **Transform data → Data source settings**.
 
