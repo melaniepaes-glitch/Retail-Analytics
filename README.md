@@ -85,6 +85,10 @@ SQL validation confirmed **2,216 unique customers**, **zero missing values**, an
 
 ## Power BI Dashboard
 
+### Dashboard Preview
+
+![Retail Customer Analytics Power BI Dashboard](screenshots/retail_customer_dashboard.png)
+
 An interactive Power BI dashboard was developed to visualize customer demographics, purchasing behavior, and marketing campaign performance.
 
 ### Key Performance Indicators
