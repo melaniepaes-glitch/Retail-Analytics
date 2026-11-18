@@ -214,3 +214,19 @@ Use the Year and Education slicers to explore different customer segments.
 - The SQL import requires a local file path compatible with the MySQL server configuration.
 - The Excel and Power BI files may require refreshing or updating their data source paths on another computer.
 - The SQL setup should be run against a new database when reproducing the complete workflow.
+
+## Business Recommendations and Future Improvements
+
+### Business Recommendations
+
+- **Customer Segmentation:** Use demographic characteristics such as age, education, marital status, and income to identify customer groups for more targeted marketing campaigns.
+- **Personalized Promotions:** Analyze spending across product categories to identify customer preferences and develop more relevant promotional offers.
+- **Campaign Effectiveness:** Use campaign acceptance and response data to compare customer engagement and identify opportunities to improve future marketing strategies.
+- **High-Value Customers:** Use total spending analysis to identify high-value customers and explore opportunities for retention and loyalty initiatives.
+
+### Future Improvements
+
+- **Predictive Modeling:** Train and evaluate a classification model to estimate the likelihood of customers responding to future marketing campaigns.
+- **Marketing ROI Analysis:** Incorporate campaign costs and attributable revenue to measure return on investment and evaluate promotional effectiveness.
+
+**Project Scope:** This project focuses on descriptive and exploratory analytics. Predictive modeling and ROI measurement are proposed future enhancements, not features implemented in the current project.
