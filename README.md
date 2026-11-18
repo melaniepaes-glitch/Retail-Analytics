@@ -54,6 +54,7 @@ The dataset was cleaned and validated using Python and MySQL to ensure accuracy 
 - Removed those 24 records, reducing the dataset from 2,240 to 2,216 customers.
 - Created an `Age` feature using customers' birth years.
 - Verified that the cleaned dataset contains no missing values or duplicate customer IDs.
+- - **Date Formatting (`Dt_Customer`):** Standardized the display of customer enrollment dates in Excel using the Day-Month-Year (DMY) format (`dd/mm/yyyy`) to ensure consistent date presentation during analysis.
 
 ### Data Quality Checks
 
@@ -145,6 +146,8 @@ Microsoft Excel was used for descriptive statistics, customer segmentation, and 
 - Compared campaign responses across education levels and marital status groups using PivotTables and charts.
 
 The Excel workbook provides an additional view of customer characteristics and campaign engagement.
+
+**Date Formatting:** Formatted the `Dt_Customer` column in Excel using the Day-Month-Year (DMY) date format (`dd/mm/yyyy`) to ensure customer enrolment dates are displayed consistently and correctly for analysis and visualization.
 
 ## How to Explore and Run This Project
 
