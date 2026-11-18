@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS marketing_campaign (
 -- 4. Update the file path below to match your MySQL configuration.
 -- 5. Run this import once when setting up the database.
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/marketing_campaign.csv'
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/marketing_campaign_cleaned.csv'
 IGNORE INTO TABLE marketing_campaign
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
