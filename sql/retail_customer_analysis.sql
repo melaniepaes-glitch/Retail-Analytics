@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS marketing_campaign (
 );
 
 -- DATA IMPORT INSTRUCTIONS
--- 1. Download marketing_campaign.csv from the project's GitHub repository.
+-- 1. Download marketing_campaign_cleaned.csv from the project's GitHub repository.
 -- 2. Place the CSV in your MySQL server's permitted import directory.
 -- 3. Check the permitted directory using:
 --       SHOW VARIABLES LIKE 'secure_file_priv';
